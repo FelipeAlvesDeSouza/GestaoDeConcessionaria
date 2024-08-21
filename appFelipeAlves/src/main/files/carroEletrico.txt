@@ -1,0 +1,3 @@
+Onix;60.000;Preta;Chevrolet;Sedan;
+Focus;60.000;Roxo;Ford;Ret;
+Jeep Compass;60.000;Preta;Jeep;Sedan;

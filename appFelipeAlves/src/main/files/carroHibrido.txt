@@ -1,0 +1,3 @@
+Fiesta;40.000;Prata;Ford;Sedan;
+Idea;60.000;Roxo;Fiat;Ret;
+i30;60.000;Preta;Hyundai;Sedan;

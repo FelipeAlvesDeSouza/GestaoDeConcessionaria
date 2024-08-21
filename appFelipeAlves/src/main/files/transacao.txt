@@ -1,0 +1,3 @@
+Cartão;Débito;true;
+Cartão;Crédito;false;
+Dinheiro;Pix;true;

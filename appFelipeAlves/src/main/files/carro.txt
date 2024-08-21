@@ -1,0 +1,3 @@
+Amarelo;Mustang;false;102.30;
+Preto;Tesla;true;232.30;
+Vermelho;Ferrari;true;530.30;
