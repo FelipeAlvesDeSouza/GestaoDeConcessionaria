@@ -7,6 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Carro {
+    private Integer id;
     private String nome;
     private String cor;
     private Double valor;
@@ -16,6 +17,7 @@ public class Carro {
     @Override
     public String toString() {
         return "{" +
+                "id = " + id + '\'' +
                 "nome='" + nome + '\'' +
                 ", cor='" + cor + '\'' +
                 ", valor=" + valor +

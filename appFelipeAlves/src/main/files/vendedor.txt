@@ -1,3 +1,10 @@
-12231231;felipe.souza;Felipe;2000.00;
-13131233;rodrigo.teste;Rodrigo;1324.00;
-41231312;lea.alves;Lea;3513.00;
+V;12231231;felipe.souza;Felipe;2000.00;
+E;Onix;60.000;Preta;Chevrolet;Sedan;
+E;Focus;60.000;Roxo;Ford;Ret;
+V;13131233;rodrigo.teste;Rodrigo;1324.00;
+H;Fiesta;40.000;Prata;Ford;Sedan;
+H;Idea;60.000;Roxo;Fiat;Ret;
+V;41231312;lea.alves;Lea;3513.00;
+E;Jeep Compass;60.000;Preta;Jeep;Sedan;
+H;i30;60.000;Preta;Hyundai;Sedan;
+E;Jeep Compass;60.000;Preta;Jeep;Sedan;
