@@ -13,7 +13,6 @@ public class Carro {
     private Double valor;
     private boolean estoque;
 
-
     @Override
     public String toString() {
         return "{" +

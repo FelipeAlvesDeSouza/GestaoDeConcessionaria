@@ -2,7 +2,10 @@ package br.edu.infnet.appFelipeAlves;
 
 import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
 import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
+import br.edu.infnet.appFelipeAlves.model.domain.Transacao;
 import br.edu.infnet.appFelipeAlves.model.domain.Vendedor;
+import br.edu.infnet.appFelipeAlves.model.service.VendedorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -14,13 +17,13 @@ import java.util.Map;
 
 @Component
 public class VendedorLoader implements ApplicationRunner {
+
+    @Autowired
+    private VendedorService vendedorService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception
     {
-
-        Map<Integer , Vendedor> map = new HashMap<Integer, Vendedor>();
-        Integer id = 0;
-
 
         FileReader file = new FileReader("src/main/files/vendedor.txt");
         BufferedReader leitura = new BufferedReader(file);
@@ -39,14 +42,12 @@ public class VendedorLoader implements ApplicationRunner {
                 case "V":
                     vendedor = new Vendedor();
 
-                    vendedor.setId(++id);
                     vendedor.setCpf(campos[1]);
                     vendedor.setEmail(campos[2]);
                     vendedor.setNome(campos[3]);
                     vendedor.setSalario(Double.valueOf(campos[4]));
 
-                    map.put(vendedor.getId(), vendedor);
-
+                    vendedorService.incluir(vendedor);
                     break;
 
                 case "H":
@@ -61,6 +62,8 @@ public class VendedorLoader implements ApplicationRunner {
 
                    vendedor.getCarros().add(carroHibrido);
 
+                    System.out.println("[CARRO HIBRIDO - VENDEDOR] " + carroHibrido);
+
                    break;
 
                 case "E":
@@ -74,7 +77,18 @@ public class VendedorLoader implements ApplicationRunner {
 
                     vendedor.getCarros().add(carroEletrico);
 
+
+                    System.out.println("[CARRO ELÉTRICO - VENDEDOR] " + carroEletrico);
                     break;
+
+                case "T":
+                    Transacao transacao = new Transacao();
+
+                    transacao.setFormaPagamento(campos[1]);
+                    transacao.setMetodoPagamento(campos[2]);
+                    transacao.setAprovado(Boolean.parseBoolean(campos[3]));
+
+                    System.out.println("[TRANSAÇÃO] " + transacao);
 
                 default:
                     break;
@@ -84,9 +98,9 @@ public class VendedorLoader implements ApplicationRunner {
             linha = leitura.readLine();
         }
 
-        for (Vendedor vendedores : map.values())
+        for (Vendedor vendedores : vendedorService.obterLista())
         {
-            System.out.println("[VENDEDORES] " + vendedores);
+            System.out.println("[VENDEDORES - LOADER] " + vendedores);
         }
 
 

@@ -1,10 +1,16 @@
 V;12231231;felipe.souza;Felipe;2000.00;
 E;Onix;60.000;Preta;Chevrolet;Sedan;
 E;Focus;60.000;Roxo;Ford;Ret;
+T;Cartão;Débito;true;
 V;13131233;rodrigo.teste;Rodrigo;1324.00;
 H;Fiesta;40.000;Prata;Ford;Sedan;
+T;Cartão;Crédito;false;
 H;Idea;60.000;Roxo;Fiat;Ret;
+T;Cartao;Credito Parcelado 36x;false;
 V;41231312;lea.alves;Lea;3513.00;
-E;Jeep Compass;60.000;Preta;Jeep;Sedan;
+E;Jeep Renegade;60.000;Preta;Jeep;Ret;
+T;Cartão;Débito;true;
 H;i30;60.000;Preta;Hyundai;Sedan;
+T;Cartão;Débito;true;
 E;Jeep Compass;60.000;Preta;Jeep;Sedan;
+T;Cartão;Débito;true;

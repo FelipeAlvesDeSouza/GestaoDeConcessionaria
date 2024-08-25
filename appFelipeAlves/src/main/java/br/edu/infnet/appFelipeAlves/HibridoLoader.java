@@ -49,7 +49,7 @@ public class HibridoLoader implements ApplicationRunner {
 
         for (Hibrido carroHibrido : carroHibridoService.obterLista())
         {
-            System.out.println("[CARRO HIBRIDO] " + carroHibrido);
+            System.out.println("[CARRO HIBRIDO - LOADER] " + carroHibrido);
         }
 
         file.close();
