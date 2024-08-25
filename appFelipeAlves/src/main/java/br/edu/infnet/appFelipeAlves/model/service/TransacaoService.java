@@ -1,6 +1,7 @@
 package br.edu.infnet.appFelipeAlves.model.service;
 
 import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
+import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
 import br.edu.infnet.appFelipeAlves.model.domain.Transacao;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,10 @@ public class TransacaoService {
     public Collection<Transacao> obterLista()
     {
         return mapa.values();
+    }
+
+    public Transacao obterPorId(Integer id)
+    {
+        return mapa.get(id);
     }
 }

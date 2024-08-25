@@ -25,4 +25,9 @@ public class VendedorService {
     {
         return mapa.values();
     }
+
+    public Vendedor obterPorId(Integer id)
+    {
+        return mapa.get(id);
+    }
 }

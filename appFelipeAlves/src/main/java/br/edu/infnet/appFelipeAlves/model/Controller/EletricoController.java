@@ -1,10 +1,10 @@
 package br.edu.infnet.appFelipeAlves.model.Controller;
 
 import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
+import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
 import br.edu.infnet.appFelipeAlves.model.service.EletricoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -18,5 +18,19 @@ public class EletricoController {
     public Collection<Eletrico> obterListaCarrosEletronicos()
     {
         return eletricoService.obterLista();
+    }
+
+    @GetMapping(value = "carrosEletricos/{id}")
+    public Eletrico obterPorId(@PathVariable Integer id)
+    {
+        return eletricoService.obterPorId(id);
+    }
+
+    @PostMapping(value = "carrosEletricos/incluir")
+    public String incluir(@RequestBody Eletrico carroEletrico)
+    {
+        eletricoService.incluir(carroEletrico);
+
+        return "Adicionado com Sucesso ! :)";
     }
 }

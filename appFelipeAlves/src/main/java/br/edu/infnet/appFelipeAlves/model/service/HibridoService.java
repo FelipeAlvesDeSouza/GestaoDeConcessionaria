@@ -1,5 +1,6 @@
 package br.edu.infnet.appFelipeAlves.model.service;
 
+import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
 import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,16 @@ public class HibridoService {
     {
         return mapa.values();
     }
+
+    public Hibrido obterPorId(Integer id)
+    {
+        return mapa.get(id);
+    }
+
+    public void excluir (Integer id)
+    {
+        mapa.remove(id);
+    }
+
 
 }

@@ -24,4 +24,9 @@ public class EletricoService {
         return mapa.values();
     }
 
+    public Eletrico obterPorId(Integer id)
+    {
+        return mapa.get(id);
+    }
+
 }
