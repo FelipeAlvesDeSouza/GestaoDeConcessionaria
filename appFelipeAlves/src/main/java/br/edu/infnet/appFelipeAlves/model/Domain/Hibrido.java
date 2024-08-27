@@ -1,10 +1,14 @@
-package br.edu.infnet.appFelipeAlves.model.domain;
+package br.edu.infnet.appFelipeAlves.model.Domain;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+
+@Entity
+@Table(name = "THibrido")
 public class Hibrido extends Carro{
     private String marca;
     private String tipoCarroceria;

@@ -1,9 +1,7 @@
 package br.edu.infnet.appFelipeAlves.model.Controller;
 
-import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
-import br.edu.infnet.appFelipeAlves.model.domain.Transacao;
-import br.edu.infnet.appFelipeAlves.model.domain.Vendedor;
-import br.edu.infnet.appFelipeAlves.model.service.VendedorService;
+import br.edu.infnet.appFelipeAlves.model.Domain.Vendedor;
+import br.edu.infnet.appFelipeAlves.model.Service.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +14,7 @@ public class VendedorController {
     private VendedorService vendedorService;
 
     @GetMapping(value = "vendedores")
-    public Collection<Vendedor> obterListaVendedores()
+    public Iterable<Vendedor> obterListaVendedores()
     {
         return vendedorService.obterLista();
     }

@@ -1,8 +1,8 @@
 package br.edu.infnet.appFelipeAlves;
 
-import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
-import br.edu.infnet.appFelipeAlves.model.service.EletricoService;
-import br.edu.infnet.appFelipeAlves.model.service.HibridoService;
+import br.edu.infnet.appFelipeAlves.model.Domain.Eletrico;
+import br.edu.infnet.appFelipeAlves.model.Domain.Vendedor;
+import br.edu.infnet.appFelipeAlves.model.Service.EletricoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 
@@ -33,6 +31,9 @@ public class EletricoLoader implements ApplicationRunner {
         {
             campos = linha.split(";");
 
+            Vendedor vendedor = new Vendedor();
+            vendedor.setId(Integer.valueOf(campos[5]));
+
             Eletrico carroEletrico = new Eletrico();
 
             carroEletrico.setNome(campos[0]);
@@ -40,6 +41,7 @@ public class EletricoLoader implements ApplicationRunner {
             carroEletrico.setCor(campos[2]);
             carroEletrico.setMarca(campos[3]);
             carroEletrico.setTipoCarroceria(campos[4]);
+            carroEletrico.setVendedor(vendedor);
 
             carroEletricoService.incluir(carroEletrico);
 

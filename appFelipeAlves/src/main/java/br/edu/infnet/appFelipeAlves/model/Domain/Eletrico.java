@@ -1,10 +1,14 @@
-package br.edu.infnet.appFelipeAlves.model.domain;
+package br.edu.infnet.appFelipeAlves.model.Domain;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+
+@Entity
+@Table(name = "TEletrico")
 public class Eletrico extends Carro{
 
     private String marca;

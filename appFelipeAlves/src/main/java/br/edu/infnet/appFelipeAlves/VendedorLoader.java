@@ -1,21 +1,21 @@
 package br.edu.infnet.appFelipeAlves;
 
-import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
-import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
-import br.edu.infnet.appFelipeAlves.model.domain.Transacao;
-import br.edu.infnet.appFelipeAlves.model.domain.Vendedor;
-import br.edu.infnet.appFelipeAlves.model.service.VendedorService;
+import br.edu.infnet.appFelipeAlves.model.Domain.Eletrico;
+import br.edu.infnet.appFelipeAlves.model.Domain.Hibrido;
+import br.edu.infnet.appFelipeAlves.model.Domain.Transacao;
+import br.edu.infnet.appFelipeAlves.model.Domain.Vendedor;
+import br.edu.infnet.appFelipeAlves.model.Service.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
+@Order(1)
 public class VendedorLoader implements ApplicationRunner {
 
     @Autowired

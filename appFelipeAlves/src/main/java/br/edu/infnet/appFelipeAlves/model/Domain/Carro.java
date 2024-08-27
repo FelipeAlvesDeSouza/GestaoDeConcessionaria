@@ -1,17 +1,28 @@
-package br.edu.infnet.appFelipeAlves.model.domain;
+package br.edu.infnet.appFelipeAlves.model.Domain;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
 
 @Getter
 @Setter
-public class Carro {
+@Entity
+@Table(name = "TCarro")
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Carro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String nome;
     private String cor;
     private Double valor;
     private boolean estoque;
+
+    @ManyToOne
+    @JoinColumn(name = "idVendedor")
+    private Vendedor vendedor;
 
     @Override
     public String toString() {

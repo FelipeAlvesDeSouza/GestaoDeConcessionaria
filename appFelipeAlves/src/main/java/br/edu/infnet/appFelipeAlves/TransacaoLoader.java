@@ -1,9 +1,7 @@
 package br.edu.infnet.appFelipeAlves;
 
-import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
-import br.edu.infnet.appFelipeAlves.model.domain.Transacao;
-import br.edu.infnet.appFelipeAlves.model.service.TransacaoService;
-import br.edu.infnet.appFelipeAlves.model.service.VendedorService;
+import br.edu.infnet.appFelipeAlves.model.Domain.Transacao;
+import br.edu.infnet.appFelipeAlves.model.Service.TransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

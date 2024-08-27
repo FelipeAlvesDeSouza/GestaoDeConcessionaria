@@ -1,8 +1,7 @@
 package br.edu.infnet.appFelipeAlves.model.Controller;
 
-import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
-import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
-import br.edu.infnet.appFelipeAlves.model.service.HibridoService;
+import br.edu.infnet.appFelipeAlves.model.Domain.Hibrido;
+import br.edu.infnet.appFelipeAlves.model.Service.HibridoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +13,7 @@ public class HibridoController {
     private HibridoService hibridoService;
 
     @GetMapping(value = "carrosHibridos")
-    public Collection<Hibrido> obterListaCarrosHibridos()
+    public Iterable<Hibrido> obterListaCarrosHibridos()
     {
         return hibridoService.obterLista();
     }

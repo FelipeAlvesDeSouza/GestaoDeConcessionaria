@@ -1,8 +1,8 @@
 package br.edu.infnet.appFelipeAlves;
 
-import br.edu.infnet.appFelipeAlves.model.domain.Eletrico;
-import br.edu.infnet.appFelipeAlves.model.domain.Hibrido;
-import br.edu.infnet.appFelipeAlves.model.service.HibridoService;
+import br.edu.infnet.appFelipeAlves.model.Domain.Hibrido;
+import br.edu.infnet.appFelipeAlves.model.Domain.Vendedor;
+import br.edu.infnet.appFelipeAlves.model.Service.HibridoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 
 @Component
@@ -32,6 +30,8 @@ public class HibridoLoader implements ApplicationRunner {
         while(linha != null)
         {
             campos = linha.split(";");
+            Vendedor vendedor = new Vendedor();
+            vendedor.setId(Integer.valueOf(campos[5]));
 
             Hibrido carroHibrido = new Hibrido();
 
@@ -40,6 +40,7 @@ public class HibridoLoader implements ApplicationRunner {
             carroHibrido.setCor(campos[2]);
             carroHibrido.setMarca(campos[3]);
             carroHibrido.setTipoCarroceria(campos[4]);
+            carroHibrido.setVendedor(vendedor);
 
             carroHibridoService.incluir(carroHibrido);
 
